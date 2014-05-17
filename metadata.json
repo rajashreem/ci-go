@@ -1,0 +1,17 @@
+{
+  "name": "ci-go",
+  "version": "0.1.0",
+  "author": "Rajashree",
+  "summary": "Setup go for continuous integration",
+  "license": "Apache 2.0",
+  "source": "",
+  "project_page": null,
+  "issues_url": null,
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    }
+  ]
+}
+
