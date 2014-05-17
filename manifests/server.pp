@@ -16,12 +16,14 @@ class ci-go::server{
 
   exec { 'download_go_server_package':
     command => "wget ${go_server_deb_package_url} -O ${go_server_package_download_path}",
+    unless => "ls -la ${go_server_package_download_path}",
     creates => $go_server_download_path,
     timeout => 0
   }
 
   exec { 'install_go_server':
     command => "dpkg -i ${$go_server_package_download_path}",
+    user => 'root',
     require => [Exec['download_go_server_package'], Class['dependencies::unzip'], Class['dependencies::java']]
   }
 

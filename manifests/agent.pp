@@ -17,11 +17,13 @@ class ci-go::agent{
 
   exec { 'download_go_agent_package':
     command => "wget ${go_agent_deb_package_url} -O ${go_agent_package_download_path}",
+    unless => "ls -la ${go_agent_package_download_path}",
     creates => $go_agent_download_path,
   }
 
   exec { 'install_go_agent':
     command => "dpkg -i ${$go_agent_package_download_path}",
+    user => 'root',
     require => [Exec['download_go_agent_package'], Class['dependencies::java']]
   }
 
