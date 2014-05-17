@@ -1,4 +1,8 @@
-class ci-go::server($version = '14.1.0', $build = '18882'){
+class ci-go::server{
+
+  $go_config = hiera_hash('ci_go')
+  $version = $go_config['version']
+  $build = $go_config['build']
 
   $go_server_deb_package = "go-server-${version}-${build}.deb"
   $go_server_deb_package_url = "http://download01.thoughtworks.com/go/${version}/ga/${go_server_deb_package}"
