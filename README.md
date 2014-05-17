@@ -1,79 +1,52 @@
-# go
+# go-ci
 
-#### Table of Contents
+####Table of Contents
 
-1. [Overview](#overview)
-2. [Module Description - What the module does and why it is useful](#module-description)
-3. [Setup - The basics of getting started with go](#setup)
-    * [What go affects](#what-go-affects)
-    * [Setup requirements](#setup-requirements)
-    * [Beginning with go](#beginning-with-go)
-4. [Usage - Configuration options and additional functionality](#usage)
-5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
-5. [Limitations - OS compatibility, etc.](#limitations)
-6. [Development - Guide for contributing to the module](#development)
+1. [Overview - What is the go-ci module?](#overview)
+2. [Module Description - What does the module do?](#module-description)
+3. [Setup - The basics of getting started with go-ci](#setup)
+4. [Supported on](#supported-on)
 
-## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+##Overview
 
-## Module Description
+The go-ci module allows you to setup go-server and go-agent to support continuous integration and continuous delivery on your project.
 
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
+##Module Description
 
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
+Go is a product that ThoughtWorks Studios (the product group of ThoughtWorks) has built over the last 6 years to support continuous delivery.
+It helps create and manage automated deployment pipelines.
+It supports automating the entire build-test-release process from check-in to deployment.
+It is open-source, now freely available under a BSD-style license.
+Here is the link to the [website](http://www.go.cd/)
 
-## Setup
+##Setup
 
-### What go affects
+This module assumes that hiera is supported.
+To install Go server and Go agent, following values are needed to be provided in hiera under the key 'go_ci'
+    1. version
+    2. build
+    3. server_ip
 
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
+For example,
+```puppet
+    go_ci:
+        version: 14.1.0
+        build: 18882
+        server_ip: 127.0.0.1
+```
 
-### Setup Requirements **OPTIONAL**
+To install Go server, just include following class in puppet manifest
 
-If your module requires anything extra before setting up (pluginsync enabled,
-etc.), mention it here.
+```puppet
+    include go-ci::server
+```
 
-### Beginning with go
+Similarly to install Go agent, just include following class in puppet manifest
 
-The very basic steps needed for a user to get the module up and running.
+```puppet
+    include go-ci::agent
+```
 
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
-
-## Usage
-
-Put the classes, types, and resources for customizing, configuring, and doing
-the fancy stuff with your module here.
-
-## Reference
-
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
-
-## Limitations
-
-This is where you list OS compatibility, version compatibility, etc.
-
-## Development
-
-Since your module is awesome, other users will want to play with it. Let them
-know what the ground rules for contributing are.
-
-## Release Notes/Contributors/Etc **Optional**
-
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You may also add any additional sections you feel are
-necessary or important to include here. Please use the `## ` header.
+##Supported On
+This module works and has been tested on ubuntu-12.04 (64 bit)
