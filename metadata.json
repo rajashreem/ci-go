@@ -1,11 +1,11 @@
 {
   "name": "ci-go",
-  "version": "0.1.0",
-  "author": "Rajashree",
+  "version": "1.0.0",
+  "author": "Rajashree Malvade",
   "summary": "Setup go for continuous integration",
   "license": "Apache 2.0",
-  "source": "",
-  "project_page": null,
+  "source": "https://github.com/rajashreem/ci-go",
+  "project_page": "https://github.com/rajashreem/ci-go",
   "issues_url": null,
   "dependencies": [
     {
