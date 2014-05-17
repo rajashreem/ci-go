@@ -1,5 +1,5 @@
 {
-  "name": "ci-go",
+  "name": "go-ci",
   "version": "1.0.0",
   "author": "Rajashree Malvade",
   "summary": "Setup go for continuous integration",

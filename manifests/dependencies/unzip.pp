@@ -1,4 +1,4 @@
-class ci-go::dependencies::unzip {
+class go-ci::dependencies::unzip {
   package { 'unzip' :
     ensure => 'installed'
   }
