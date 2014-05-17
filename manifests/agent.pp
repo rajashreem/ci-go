@@ -1,4 +1,4 @@
-class go-ci::agent{
+class go_ci::agent{
 
   $go_config = hiera_hash('go_ci')
   $version = $go_config['version']
@@ -29,7 +29,7 @@ class go-ci::agent{
 
   file { 'agent_configuration':
     path => '/etc/default/go-agent',
-    content => template('go-ci/go_agent_configuration.erb'),
+    content => template('go_ci/go_agent_configuration.erb'),
     require => Exec['install_go_agent'],
     notify => Service['go-agent']
   }

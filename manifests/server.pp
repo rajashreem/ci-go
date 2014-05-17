@@ -1,4 +1,4 @@
-class go-ci::server{
+class go_ci::server{
 
   $go_config = hiera_hash('go_ci')
   $version = $go_config['version']

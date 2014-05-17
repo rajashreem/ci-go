@@ -1,16 +1,16 @@
-# go-ci
+# go_ci
 
 ####Table of Contents
 
-1. [Overview - What is the go-ci module?](#overview)
+1. [Overview - What is the go_ci module?](#overview)
 2. [Module Description - What does the module do?](#module-description)
-3. [Setup - The basics of getting started with go-ci](#setup)
+3. [Setup - The basics of getting started with go_ci](#setup)
 4. [Supported on](#supported-on)
 
 
 ##Overview
 
-The go-ci module allows you to setup go-server and go-agent to support continuous integration and continuous delivery on your project.
+The go_ci module allows you to setup go-server and go-agent to support continuous integration and continuous delivery on your project.
 
 ##Module Description
 
@@ -39,13 +39,13 @@ For example,
 To install Go server, just include following class in puppet manifest
 
 ```puppet
-    include go-ci::server
+    include go_ci::server
 ```
 
 Similarly to install Go agent, just include following class in puppet manifest
 
 ```puppet
-    include go-ci::agent
+    include go_ci::agent
 ```
 
 ##Supported On

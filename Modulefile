@@ -1,4 +1,4 @@
-name 'go-ci'
+name 'go_ci'
 version '1.0.0'
 source 'https://github.com/rajashreem/ci-go'
 author 'Rajashree Malvade'
