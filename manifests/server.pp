@@ -13,6 +13,7 @@ class ci-go::server($version = '14.1.0', $build = '18882'){
   exec { 'download_go_server_package':
     command => "wget ${go_server_deb_package_url} -O ${go_server_package_download_path}",
     creates => $go_server_download_path,
+    timeout => 0
   }
 
   exec { 'install_go_server':
